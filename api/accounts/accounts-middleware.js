@@ -14,11 +14,11 @@ exports.checkAccountPayload = (req, res, next) => {
   }
 
   const budgetNumber = Number(budget);
-  if (isNaN(budgetNumber)) {
+  if (!Number(budget)) {
     return res.status(400).json({ message: "budget of account must be a number" });
   }  
 
-  if (budgetNumber < 0 || budgetNumber > 1000000) {
+  if (budget < 0 || budget > 1000000) {
     return res.status(400).json({ message: "budget of account is too large or too small" });
   }
 

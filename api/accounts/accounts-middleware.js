@@ -1,5 +1,5 @@
 const Accounts = require('./accounts-model');
-const db = require('../../data/db-Config');
+const db = require('../../data/db-config');
 
 exports.checkAccountPayload = (req, res, next) => {
   const { name, budget } = req.body;
